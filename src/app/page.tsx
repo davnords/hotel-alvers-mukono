@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Phone, MapPin, Mail, Check, Copy } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -16,8 +14,12 @@ import Location from "@/components/Location";
 const hotelImages = [
   "/hotel/picture-1.jpg",
   "/hotel/picture-2.jpg",
+  "/food/picture-1.jpeg",
+  "/food/picture-2.jpeg",
   "/hotel/picture-3.jpg",
+  "/food/picture-3.jpeg",
   "/hotel/picture-4.jpg",
+  "/food/picture-4.jpeg",
 ];
 
 export default function Home() {
