@@ -61,7 +61,7 @@ export default function Home() {
             Welcome to Hotel Alvers
           </h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
-            Experience unparalleled luxury in the heart of Mukono, Uganda. Our hotel combines
+            Experience unparalleled luxury in the heart of Mukono, Uganda. The hotel is located in the centre of Mukono Town, which is situated c. 21km east of Central Kampala. Our hotel combines
             modern comfort with traditional African hospitality to create an unforgettable
             stay for our guests.
           </p>
