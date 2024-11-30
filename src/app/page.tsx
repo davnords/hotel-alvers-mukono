@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen">
+      <main className="min-h-screen w-full overflow-x-hidden">
         {/* Hero Section */}
         <section id="hero" className="relative h-[80vh] flex items-center justify-center">
           <div className="absolute inset-0 z-0">
