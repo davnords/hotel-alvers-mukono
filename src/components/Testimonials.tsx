@@ -11,18 +11,18 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "David Nordström",
+    name: "Nina Nordström",
     role: "Tourist",
-    avatar: "/people/david-nordstrom.png",
-    quote: "The location is perfect for exploring Mukono, and the restaurant serves amazing local cuisine. I will definitely be returning on my next visit to Uganda.",
-    rating: 4.5,
+    avatar: "/people/nina-nordstrom.jpeg",
+    quote: "The location is great for visiting Kampala and the restaurant serves amazing local cuisine. I will definitely be returning on my next visit to Uganda.",
+    rating: 5,
   },
   {
-    name: "David Nordström",
-    role: "Corporate Event Planner",
-    avatar: "/people/david-nordstrom.png",
-    quote: "We hosted our company retreat here and it was fantastic. The conference facilities are top-notch and the service is impeccable.",
-    rating: 5,
+    name: "Karl Nordström",
+    role: "Tourist",
+    avatar: "/people/karl-nordstrom.jpeg",
+    quote: "We lived here for our vacation and it was fantastic. It provides much needed tranquility when escaping the busy Kampala and gives a good base for excursions.",
+    rating: 4.5,
   },
 ]
 

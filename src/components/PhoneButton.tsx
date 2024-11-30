@@ -30,7 +30,8 @@ function PhoneButton() {
                 <TooltipTrigger asChild>
                     <Button
                         size="lg"
-                        className="bg-indigo-500 text-white  hover:bg-indigo-600 transition-all duration-200"
+                        
+                        className="bg-white text-black hover:bg-gray-300"
                         onClick={copyPhoneNumber}
                     >
                         {hasCopied ? (

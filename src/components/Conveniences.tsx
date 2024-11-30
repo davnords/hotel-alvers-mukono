@@ -40,12 +40,12 @@ const conveniences = [
   {
     icon: Shirt,
     title: "Laundry Service",
-    description: "Same-day laundry available",
+    description: "Laundry available with ironing",
   },
   {
     icon: Shield,
     title: "Security",
-    description: "24/7 security personnel",
+    description: "24/7 personnel and secure gate",
   },
   {
     icon: SquareParking,
