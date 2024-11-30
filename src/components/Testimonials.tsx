@@ -11,14 +11,14 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "David Chen",
+    name: "David Nordström",
     role: "Tourist",
     avatar: "/people/david-nordstrom.png",
-    quote: "The location is perfect for exploring Mukono, and the restaurant serves amazing local cuisine. I'll definitely be returning on my next visit to Uganda.",
+    quote: "The location is perfect for exploring Mukono, and the restaurant serves amazing local cuisine. I will definitely be returning on my next visit to Uganda.",
     rating: 4.5,
   },
   {
-    name: "Emily Williams",
+    name: "David Nordström",
     role: "Corporate Event Planner",
     avatar: "/people/david-nordstrom.png",
     quote: "We hosted our company retreat here and it was fantastic. The conference facilities are top-notch and the service is impeccable.",
@@ -62,7 +62,7 @@ export default function Testimonials() {
                 </div>
                 <RatingStars rating={testimonial.rating} />
                 <blockquote className="mt-4 text-gray-600 italic">
-                  "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
                 </blockquote>
               </CardContent>
             </Card>
