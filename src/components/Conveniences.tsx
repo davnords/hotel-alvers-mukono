@@ -8,6 +8,7 @@ import {
   Shirt,
   Shield,
   PhoneCall,
+  SquareParking,
 } from "lucide-react"
 
 const conveniences = [
@@ -47,7 +48,7 @@ const conveniences = [
     description: "24/7 security personnel",
   },
   {
-    icon: Shield,
+    icon: SquareParking,
     title: "Free Parking",
     description: "Secure on-site parking",
   },
