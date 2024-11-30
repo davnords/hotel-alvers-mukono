@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Hotel Alvers Mukono",
-  description: "Your Luxury Haven in Mukono, Kampala",
+  description: "Your Tranquil Haven in Mukono, Kampala",
 };
 
 export default function RootLayout({
