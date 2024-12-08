@@ -15,6 +15,7 @@ import { Coffee, Hotel, Warehouse } from "lucide-react";
 import Conveniences from "@/components/Conveniences";
 import Staff from "@/components/Staff";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const roomImages = [
   "/rooms/room_2.jpeg",
@@ -219,6 +220,8 @@ export default function Home() {
         <section id="staff">
           <Staff />
         </section>
+
+        <Footer />
       </main>
     </>
   );
