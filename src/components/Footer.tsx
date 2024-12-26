@@ -18,6 +18,11 @@ export default function Footer() {
                                 <Link href="tel:+256123456789" className="hover:text-primary transition-colors">
                                     +256 123 456 789
                                 </Link>
+
+                                or
+                                <Link href="tel:+256123456789" className="hover:text-primary transition-colors">
+                                    +256 752 601 770
+                                </Link>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Mail className="h-4 w-4" />

@@ -16,6 +16,7 @@ import Conveniences from "@/components/Conveniences";
 import Staff from "@/components/Staff";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const roomImages = [
   "/rooms/room_2.jpeg",
@@ -59,17 +60,8 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-bold mb-4">Hotel Alvers</h1>
             <p className="text-xl md:text-2xl mb-8">Your Tranquil Haven in Mukono, Kampala</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
-              <PhoneButton />
-              {/* <Button
-                size="lg"
-                variant="outline"
-                className="bg-white text-black hover:bg-gray-100 transition-all duration-200"
-                
-              >
-                <Mail className="mr-2 h-5 w-5" />
-                Email Us
-              </Button> */}
+              <PhoneButton number="+256 782 353140" />
+              <PhoneButton number="+256 752 601770" whatsapp />
             </div>
           </div>
         </section>
@@ -219,6 +211,46 @@ export default function Home() {
         {/* Staff Section */}
         <section id="staff">
           <Staff />
+        </section>
+
+        {/* Add this section before Footer */}
+        <section id="history" className="py-20 px-4 md:px-8 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Our DNA and History
+            </h2>
+
+            <div className="space-y-8 text-gray-600">
+              <div>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Welcome to our Hotel</h3>
+                <p className="mb-4">
+                  Hotel Alvers in Mukono is a family owned hotel in the heart of Africa. We have a proud heritage and derive our influences both from northern Europe and southern Uganda. With us you can experience a true African experience in a chill, safe and calm setting. To ensure that our customers receive sustainable and good quality produce, our food is mostly locally farmed products from our own farm in Ssezibwa east of Mukono.
+                </p>
+                <p className="mb-4">
+                  At the farm we grow our own vegetables and rear pigs, cows, chickens and local fish. Our skilled team is our biggest asset and together we are eager to give our guests a peaceful and stress free stay. Our restaurant and staff serves to all your needs. As we have a conference hall we also arrange meetings or big banquets.
+                </p>
+                <p>
+                  Hotel Alvers also has a broad network of reliable partners used to international clients such as car, four wheel safari vans rentals with driver, safari lodges and so on. We can suggest an itinerary depending on the length of your stay.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Our History</h3>
+                <p className="mb-4">
+                  The hotel has been expanding step by step. The name of the hotel is to honour the legacy of Anders &quot;Nille&quot; Alvers, a dear friend from Sweden that lived many years in Uganda and other countries in Africa. He was married to a Kenyan that now lives in Sweden and work for the UN. He had a very big heart. The generosity of him and his family is the reason that we could start some business 25 years ago that we then have managed to develop step by step. Sadly he passed away at a much to young age.
+                </p>
+                <p className="mb-4">
+                  We have many international clients and friends and travel frequently to learn more how to make the stay with us pleasant and easy.
+                </p>
+                <p className="mb-4">
+                  Next to our farm in Ssezibwa we have also developed a resort, <Link className="font-bold" href={'https://www.riversidewoodsresort.com/'}>Riverside Woods</Link>, that has a very nice nature around it with a famous waterfall and forest. Here you can enjoy walks in the nature, take a bicycle tour, enjoy a sunset barbecue or just relax with a nice view of the valley.
+                </p>
+                <p className="font-medium text-gray-900">
+                  We look forward to seeing you!
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <Footer />
