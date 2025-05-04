@@ -15,8 +15,8 @@ export default function Footer() {
                         <div className="space-y-3 text-sm text-muted-foreground">
                             <div className="flex items-center gap-2">
                                 <Phone className="h-4 w-4" />
-                                <Link href="tel:+256123456789" className="hover:text-primary transition-colors">
-                                    +256 123 456 789
+                                <Link href="tel:+256782353140" className="hover:text-primary transition-colors">
+                                    +256 782 353140
                                 </Link>
 
                                 or
@@ -32,7 +32,7 @@ export default function Footer() {
                             </div>
                             <div className="flex items-start gap-2">
                                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                                <p>Hotel Alvers,<br />Mukono,<br />Kampala-Jinja Road, Uganda</p>
+                                <p>Hotel Alvers,<br />Mukono,<br />Alvers Close<br />Near Kampala-Jinja Road<br />Uganda</p>
                             </div>
                         </div>
                     </div>
