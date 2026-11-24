@@ -86,3 +86,6 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Sections jumped to from the sticky top bar should not hide under it */
+section[id], footer[id] { scroll-margin-top: 96px; }
