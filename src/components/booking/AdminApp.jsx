@@ -31,7 +31,7 @@ function confirmText(b, cur, st) {
     `Booking reference: ${b.ref}\nRoom: ${b.room_type_name} × ${b.rooms}\nGuests: ${b.guests}\n` +
     `Check-in: ${fmtDate(b.check_in)} from ${st.check_in_time}\nCheck-out: ${fmtDate(b.check_out)} by ${st.check_out_time}\n` +
     `Total: ${formatMoney(b.total, cur)} (breakfast included)\n\n` +
-    `Find us: ${mapsLink(st.map_query)}\n\nWe look forward to welcoming you!\n\nHotel Alvers Mukono\n${st.address}\nTel: ${st.phone}`;
+    `Find us: ${mapsLink(st.map_query)}\n\nWe look forward to welcoming you!\n\nHotel Alvers Mukono\n${st.address}\nTel: ${st.phone}` + (st.whatsapp ? `\nWhatsApp: ${st.whatsapp}` : "");
 }
 
 /* ---------------- Login ---------------- */
@@ -537,6 +537,7 @@ function Settings({ settings, patch }) {
       <div className={s.grid2} style={{ marginTop: 14 }}>
         <div className={s.field}><label>Address</label><input className={s.input} value={v.address} onChange={set("address")} /></div>
         <div className={s.field}><label>Phone (separate numbers with /)</label><input className={s.input} value={v.phone} onChange={set("phone")} /></div>
+        <div className={s.field}><label>WhatsApp number</label><input className={s.input} value={v.whatsapp || ""} onChange={set("whatsapp")} /></div>
         <div className={s.field}><label>E-mail</label><input className={s.input} value={v.email} onChange={set("email")} /></div>
         <div className={s.field}>
           <label>Google Maps search (place name or plus code)</label>

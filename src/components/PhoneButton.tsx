@@ -30,7 +30,7 @@ function PhoneButton({ number, whatsapp }: PhoneButtonProps) {
 
     const handleClick = () => {
         if (whatsapp) {
-            window.open(`https://wa.me/${number.replace(/\s+/g, '')}`, '_blank');
+            window.open(`https://wa.me/${number.replace(/\D/g, '')}`, '_blank');
         } else {
             copyPhoneNumber();
         }
@@ -52,7 +52,7 @@ function PhoneButton({ number, whatsapp }: PhoneButtonProps) {
                         ) : (
                             <Phone className="mr-2 h-5 w-5" />
                         )}
-                        {number}
+                        {whatsapp ? `WhatsApp ${number}` : number}
                     </Button>
                 </TooltipTrigger>
                 <TooltipContent>

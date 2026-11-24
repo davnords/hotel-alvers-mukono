@@ -145,6 +145,11 @@ export async function ensureSchema() {
       for (const [k, v] of Object.entries(DEFAULT_SETTINGS)) {
         await db.query(`INSERT INTO ba_settings (key, value) VALUES ($1, $2) ON CONFLICT (key) DO NOTHING`, [k, v]);
       }
+      // 2026-11-24: new main phone number; the old combined value is replaced (WhatsApp now has its own field).
+      await db.query(
+        "UPDATE ba_settings SET value = $1 WHERE key = 'phone' AND value = $2",
+        [DEFAULT_SETTINGS.phone, "+256 782 353140 / +256 752 601 770"]
+      );
       const ph = await db.query("SELECT COUNT(*)::int AS n FROM ba_photos");
       if (ph.rows[0].n === 0) {
         let i = 0;

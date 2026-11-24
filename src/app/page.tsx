@@ -81,8 +81,8 @@ export default function Home() {
               </div>
             )}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <PhoneButton number="+256 782 353140" />
-              <PhoneButton number="+256 752 601770" whatsapp />
+              <PhoneButton number="+256 392 176623" />
+              <PhoneButton number="+256 752 601 770" whatsapp />
             </div>
           </div>
         </section>
