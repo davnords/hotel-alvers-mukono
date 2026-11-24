@@ -20,7 +20,7 @@ export default function Footer() {
                                 </Link>
 
                                 or
-                                <Link href="tel:+256123456789" className="hover:text-primary transition-colors">
+                                <Link href="tel:+256752601770" className="hover:text-primary transition-colors">
                                     +256 752 601 770
                                 </Link>
                             </div>
