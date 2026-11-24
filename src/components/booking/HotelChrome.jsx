@@ -4,7 +4,7 @@ import Link from "next/link";
 // photo gallery with lightbox, mini map and footer. Texts come from the admin (Hotel info).
 import { useEffect, useState, useCallback } from "react";
 import s from "./booking.module.css";
-import { DEFAULT_SETTINGS, SHOW_BOOKING_LINKS, mapsLink, mapsEmbed } from "@/lib/booking/shared";
+import { DEFAULT_SETTINGS, SHOW_BOOKING_LINKS, mapsLink, mapsEmbed, whatsappLink } from "@/lib/booking/shared";
 import { useToday } from "./useToday";
 
 export function useHotelInfo() {
@@ -186,7 +186,10 @@ export function SiteFooter({ settings }) {
         </div>
         <div>
           <h3>Contact</h3>
-          {phones.map((p) => <p key={p}><a href={`tel:${p.replace(/[^\d+]/g, "")}`}>{p}</a></p>)}
+          {phones.map((p) => <p key={p}>Phone: <a href={`tel:${p.replace(/[^\d+]/g, "")}`}>{p}</a></p>)}
+          {st.whatsapp && (
+            <p>WhatsApp: <a href={whatsappLink(st.whatsapp)} target="_blank" rel="noopener noreferrer">{st.whatsapp}</a></p>
+          )}
           <p><a href={`mailto:${st.email}`}>{st.email}</a></p>
         </div>
         <div>

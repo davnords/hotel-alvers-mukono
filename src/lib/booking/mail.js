@@ -59,7 +59,7 @@ export function buildEmail({ intro, rows, outro, info = {}, showMap = false }) {
     rows.map(([k, v]) => `${k}: ${v}`).join("\n") +
     (outro ? `\n\n${outro}` : "") +
     (showMap ? `\n\nFind us on Google Maps: ${map}` : "") +
-    `\n\n${HOTEL_NAME}\n${st.address}\nTel: ${st.phone}`;
+    `\n\n${HOTEL_NAME}\n${st.address}\nTel: ${st.phone}` + (st.whatsapp ? `\nWhatsApp: ${st.whatsapp}` : "");
   const html = `
   <div style="font-family:Georgia,serif;max-width:560px;margin:auto;color:#2b2a26">
     <h2 style="color:#2f4a3a;margin-bottom:4px">${HOTEL_NAME}</h2>
@@ -73,7 +73,7 @@ export function buildEmail({ intro, rows, outro, info = {}, showMap = false }) {
       <a href="${escapeHtml(map)}" style="display:inline-block;background:#2f4a3a;color:#ffffff;text-decoration:none;padding:10px 18px;border-radius:6px;font-weight:bold">📍 Find us on Google Maps</a>
     </p>` : ""}
     <p style="font-family:Arial,sans-serif;font-size:13px;color:#777;margin-top:${showMap ? 8 : 24}px">
-      ${HOTEL_NAME} · ${escapeHtml(st.address)}<br>Tel: ${escapeHtml(st.phone)}
+      ${HOTEL_NAME} · ${escapeHtml(st.address)}<br>Tel: ${escapeHtml(st.phone)}${st.whatsapp ? ` · WhatsApp: ${escapeHtml(st.whatsapp)}` : ""}
     </p>
   </div>`;
   return { text, html };

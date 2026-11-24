@@ -3,9 +3,9 @@
 //   1. Save +34 694 29 84 96 as a contact on the hotel's WhatsApp phone.
 //   2. Send it the message: I allow callmebot to send me messages
 //   3. You get an API key back. Put these in Vercel:
-//        WHATSAPP_PHONE=256782353140        (the hotel's number, with country code)
+//        WHATSAPP_PHONE=256752601770        (the hotel's WhatsApp number, with country code)
 //        WHATSAPP_APIKEY=123456             (the key you received)
-//   Several numbers: WHATSAPP_PHONE=256782353140,256752601770 and WHATSAPP_APIKEY=111111,222222
+//   Several numbers: WHATSAPP_PHONE=256752601770,256392176623 and WHATSAPP_APIKEY=111111,222222
 // If the variables are missing, nothing is sent (e-mail still works).
 
 export async function notifyWhatsApp(text) {
