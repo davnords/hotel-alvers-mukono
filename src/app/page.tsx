@@ -17,6 +17,7 @@ import Staff from "@/components/Staff";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { SHOW_BOOKING_LINKS } from "@/lib/booking/shared";
 
 const roomImages = [
   "/rooms/room_2.jpeg",
@@ -57,22 +58,28 @@ export default function Home() {
             />
           </div>
           <div className="relative z-10 text-center text-white px-4">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4">Hotel Alvers</h1>
+            <h1 className="mb-6 inline-flex flex-col items-center leading-none" aria-label="Hotel Alvers">
+              <span className="text-sm md:text-base uppercase tracking-[0.45em] pl-[0.45em] text-[#d9b36a]">Hotel</span>
+              <span className="text-6xl md:text-8xl tracking-wide my-2" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>Alvers</span>
+              <span className="text-xs md:text-sm uppercase tracking-[0.3em] pl-[0.3em] pt-2 border-t border-[#d9b36a]/70 text-white/85">Mukono · Uganda</span>
+            </h1>
             <p className="text-xl md:text-2xl mb-8">Your Tranquil Haven in Mukono, Kampala</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-              <a
-                href="/booking"
-                className="inline-flex items-center justify-center rounded-md bg-white px-8 py-3 text-lg font-semibold text-gray-900 shadow hover:bg-gray-100 transition-colors"
-              >
-                Book a room
-              </a>
-              <a
-                href="/events"
-                className="inline-flex items-center justify-center rounded-md border border-white/80 px-8 py-3 text-lg font-semibold text-white hover:bg-white/10 transition-colors"
-              >
-                Conferences &amp; events
-              </a>
-            </div>
+            {SHOW_BOOKING_LINKS && (
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+                <a
+                  href="/booking"
+                  className="inline-flex items-center justify-center rounded-md bg-white px-8 py-3 text-lg font-semibold text-gray-900 shadow hover:bg-gray-100 transition-colors"
+                >
+                  Book a room
+                </a>
+                <a
+                  href="/events"
+                  className="inline-flex items-center justify-center rounded-md border border-white/80 px-8 py-3 text-lg font-semibold text-white hover:bg-white/10 transition-colors"
+                >
+                  Conferences &amp; events
+                </a>
+              </div>
+            )}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <PhoneButton number="+256 782 353140" />
               <PhoneButton number="+256 752 601770" whatsapp />

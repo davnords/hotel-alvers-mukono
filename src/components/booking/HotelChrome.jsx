@@ -4,7 +4,7 @@ import Link from "next/link";
 // photo gallery with lightbox, mini map and footer. Texts come from the admin (Hotel info).
 import { useEffect, useState, useCallback } from "react";
 import s from "./booking.module.css";
-import { DEFAULT_SETTINGS, mapsLink, mapsEmbed } from "@/lib/booking/shared";
+import { DEFAULT_SETTINGS, SHOW_BOOKING_LINKS, mapsLink, mapsEmbed } from "@/lib/booking/shared";
 import { useToday } from "./useToday";
 
 export function useHotelInfo() {
@@ -30,15 +30,25 @@ export function Wordmark({ light = false }) {
   );
 }
 
-export function SiteHeader({ active }) {
+const BOOKING_NAV = [
+  { href: "/booking", label: "Rooms", key: "booking" },
+  { href: "/events", label: "Conferences & events", key: "events" },
+  { href: "#contact", label: "Contact", key: "contact" },
+];
+
+// The green top bar. `links` can be replaced (the homepage passes its own section links).
+/** @param {{ active?: string, links?: Array<{ href: string, label: string, key: string, cta?: boolean }>, sticky?: boolean }} props */
+export function SiteHeader({ active, links = BOOKING_NAV, sticky = false }) {
   return (
-    <header className={s.siteHeader}>
+    <header className={`${s.siteHeader} ${sticky ? s.siteHeaderSticky : ""}`}>
       <div className={s.siteHeaderInner}>
         <Wordmark light />
         <nav className={s.siteNav}>
-          <Link href="/booking" className={active === "booking" ? s.navOn : ""}>Rooms</Link>
-          <Link href="/events" className={active === "events" ? s.navOn : ""}>Conferences &amp; events</Link>
-          <a href="#contact">Contact</a>
+          {links.map((l) =>
+            l.href.startsWith("/")
+              ? <Link key={l.href} href={l.href} className={`${active === l.key ? s.navOn : ""} ${l.cta ? s.navCta : ""}`}>{l.label}</Link>
+              : <a key={l.href} href={l.href} className={l.cta ? s.navCta : ""}>{l.label}</a>
+          )}
         </nav>
       </div>
     </header>
@@ -184,10 +194,16 @@ export function SiteFooter({ settings }) {
           <p>Check-in from {st.check_in_time}</p>
           <p>Check-out by {st.check_out_time}</p>
           <p>Breakfast included</p>
-          <p><Link href="/booking">Book a room</Link> · <Link href="/events">Events</Link></p>
+          {SHOW_BOOKING_LINKS && <p><Link href="/booking">Book a room</Link> · <Link href="/events">Events</Link></p>}
         </div>
       </div>
       <div className={s.footerBottom}>© {year} Hotel Alvers Mukono</div>
     </footer>
   );
+}
+
+// Footer that loads the hotel info by itself – used on the homepage.
+export function HotelFooter() {
+  const { settings } = useHotelInfo();
+  return <SiteFooter settings={settings} />;
 }

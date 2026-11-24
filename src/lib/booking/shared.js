@@ -56,3 +56,8 @@ export function whatsappLink(phone, text = "") {
   if (d.startsWith("0")) d = "256" + d.slice(1); // local Ugandan number → +256
   return `https://wa.me/${d}${text ? "?text=" + encodeURIComponent(text) : ""}`;
 }
+
+// Switch for the "Book a room" / "Conferences & events" links on the homepage and in the footer.
+// Set to true when the booking system has been fully tested and should be visible to guests.
+// (The pages /booking, /events and /admin work either way – this only hides the links.)
+export const SHOW_BOOKING_LINKS = false;
