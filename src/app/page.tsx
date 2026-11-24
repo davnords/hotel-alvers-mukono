@@ -59,6 +59,20 @@ export default function Home() {
           <div className="relative z-10 text-center text-white px-4">
             <h1 className="text-5xl md:text-7xl font-bold mb-4">Hotel Alvers</h1>
             <p className="text-xl md:text-2xl mb-8">Your Tranquil Haven in Mukono, Kampala</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+              <a
+                href="/booking"
+                className="inline-flex items-center justify-center rounded-md bg-white px-8 py-3 text-lg font-semibold text-gray-900 shadow hover:bg-gray-100 transition-colors"
+              >
+                Book a room
+              </a>
+              <a
+                href="/events"
+                className="inline-flex items-center justify-center rounded-md border border-white/80 px-8 py-3 text-lg font-semibold text-white hover:bg-white/10 transition-colors"
+              >
+                Conferences &amp; events
+              </a>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <PhoneButton number="+256 782 353140" />
               <PhoneButton number="+256 752 601770" whatsapp />

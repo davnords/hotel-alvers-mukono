@@ -10,6 +10,8 @@ import {
     Phone,
     ChevronDown,
     Check,
+    CalendarCheck,
+    PartyPopper,
 } from "lucide-react"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
@@ -29,6 +31,11 @@ const navItems = [
         title: "Amenities",
         icon: UtensilsCrossed,
         href: "#conveniences",
+    },
+    {
+        title: "Events",
+        icon: PartyPopper,
+        href: "/events",
     },
     {
         title: "Location",
@@ -66,6 +73,10 @@ export default function Navbar() {
     }, [])
 
     const scrollToSection = (href: string) => {
+        if (href.startsWith("/")) {
+            window.location.href = href
+            return
+        }
         const element = document.querySelector(href)
         if (element) {
             const offset = 80 // Height of the navbar
@@ -121,22 +132,40 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    {/* Contact Button */}
-                    <Button
-                        size="sm"
-                        className={cn(
-                            "hidden md:flex items-center gap-2",
-                            !isScrolled && "bg-white text-gray-900 hover:bg-gray-100"
-                        )}
-                        onClick={copyPhoneNumber}
-                    >
-                        {hasCopied ? (
-                            <Check className="h-4 w-4 text-green-600" />
-                        ) : (
-                            <Phone className="h-4 w-4" />
-                        )}
-                        Contact us
-                    </Button>
+                    {/* Contact + Book Buttons */}
+                    <div className="hidden md:flex items-center gap-2">
+                        <Button
+                            size="sm"
+                            variant="ghost"
+                            className={cn(
+                                "flex items-center gap-2",
+                                isScrolled
+                                    ? "text-gray-600 hover:text-gray-900"
+                                    : "text-white/90 hover:text-white hover:bg-black"
+                            )}
+                            onClick={copyPhoneNumber}
+                        >
+                            {hasCopied ? (
+                                <Check className="h-4 w-4 text-green-600" />
+                            ) : (
+                                <Phone className="h-4 w-4" />
+                            )}
+                            Contact us
+                        </Button>
+                        <Button
+                            size="sm"
+                            asChild
+                            className={cn(
+                                "flex items-center gap-2",
+                                !isScrolled && "bg-white text-gray-900 hover:bg-gray-100"
+                            )}
+                        >
+                            <a href="/booking">
+                                <CalendarCheck className="h-4 w-4" />
+                                Book a room
+                            </a>
+                        </Button>
+                    </div>
 
                     {/* Mobile Menu Button */}
                     <Sheet>
@@ -167,8 +196,15 @@ export default function Navbar() {
                                         {item.title}
                                     </Button>
                                 ))}
+                                <Button size="sm" asChild className="flex items-center gap-2 w-full">
+                                    <a href="/booking">
+                                        <CalendarCheck className="h-4 w-4" />
+                                        Book a room
+                                    </a>
+                                </Button>
                                 <Button
                                     size="sm"
+                                    variant="outline"
                                     className="flex items-center gap-2 w-full"
                                     onClick={copyPhoneNumber}
                                 >
